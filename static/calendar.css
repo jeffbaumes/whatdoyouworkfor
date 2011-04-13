@@ -1,0 +1,24 @@
+#chart {
+  /*font: 12px sans-serif;*/
+  font: 100 12px/14px Georgia, serif;
+}
+
+.day {
+  /*fill: none;*/
+  stroke: #fff;
+  stroke-opacity: 0.1;
+  /*stroke: none;*/
+  /*shape-rendering: crispEdges;*/
+}
+
+.month {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+  /*shape-rendering: crispEdges;*/
+}
+
+.arrow {
+  fill: none;
+  stroke-width: 3px;
+}

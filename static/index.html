@@ -1,0 +1,140 @@
+<!doctype html>
+	<head>
+		<title>What do you work for?</title>
+		
+		<style type = "text/css">
+			*    { margin: 0; padding: 0; }
+			body { width: 100%; height: 100%; }
+			img  { display: block; margin: 20px; vertical-align: middle; }
+
+table.fields
+{
+   padding-left: 50px;
+}
+
+.fieldname
+{
+   font: 100 14px/16px Georgia, serif;
+   text-align: right;
+}
+
+.menu
+{
+  padding-left: 10px;
+}
+
+.menu ul
+{
+    margin: 0px;
+    padding: 0px;
+    white-space: nowrap;
+    /*float: left;*/
+    /*list-style-type: none;*/
+}
+
+.menu li a
+{
+    /*display: block;*/
+    color: black;
+    background-color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font: 100 16px/18px Georgia, serif;
+}
+
+.menu li a:hover
+{
+    background-color: #eee;
+}
+
+.menu li a.selected
+{
+    background-color: #ccc;
+}
+
+.menu li
+{
+    list-style-type: none;
+    display: inline;
+    margin-right: 4px;
+}
+
+#chart {
+  padding-top: 20px;
+}
+
+#income {
+  font: 100 16px/18px Georgia, serif;
+  padding-left: 10px;
+}
+
+			#welcome {
+				font: 100 24px/30px Georgia, serif;
+        padding-left: 50px;
+        padding-top: 50px;
+        padding-bottom: 10px;
+			}
+      #subtitle {
+        font: 100 16px/18px Georgia, serif;
+        padding-left: 80px;
+        padding-bottom: 30px;
+      }
+			#message {
+				font: 100 24px/30px Georgia, serif;
+        padding-left: 50px;
+        padding-top: 10px;
+        width: 900px;
+			}
+			#tax-info {
+				font: 100 24px/30px Georgia, serif;
+			}
+			#tax-info>li { padding-bottom: 20px; }
+			#tax-info>li:nth-child(even) { background: #e6e6e6; }
+			ul.cols li { float: left; list-style: none; margin: 0 20px; }
+			li.name { font-style: italic; }
+			div.clear { clear: both; width: 0; height: 0; }
+			span.usd  { font-size: 75%; text-transform: uppercase; letter-spacing: 2px; margin-left: 2px; }
+			#blurb a { color: #555 }
+			#blurb { font: 100 12px/14px Georgia, serif; margin: 20px; padding: 10px; position: fixed; bottom: 0; right: 0; width: 400px; background: #eee; opacity: 0.8; border-radius: 10px; border: 1px; }
+		</style>
+		
+		<script type = "text/javascript" src = "dvc.ajax.js"></script>
+		<script type = "text/javascript" src = "d3.min.js"></script>
+		<script type = "text/javascript" src = "d3.time.min.js"></script>
+		<script type = "text/javascript" src = "calendar.js"></script>
+    <link type="text/css" rel="stylesheet" href="colorbrewer.css"/>
+    <link type="text/css" rel="stylesheet" href="calendar.css"/>
+	</head>
+	<body>
+    <div id = "welcome">What if you paid your federal taxes with your entire income starting January first?
+    <p>Where would your money go?</div>
+    <div id = "subtitle">Move your mouse over the calendar for details.</div>
+    <table class="fields">
+    <tr>
+    <td class="fieldname">income</td>
+    <td><div id = "income">$<input type="text" value="50000"></input></div></td>
+    </tr>
+    <tr>
+    <td class="fieldname">work week</td>
+    <td><div id = "workweekmenu" class="menu"><ul></ul></div></td>
+    </tr>
+    <tr>
+    <td class="fieldname">filing status</td>
+    <td><div id = "statusmenu" class="menu"><ul></ul></div></td>
+    </tr>
+    <tr>
+    <td class="fieldname">year</td>
+    <td><div id = "yearmenu" class="menu"><ul></ul></div></td>
+    </tr>
+    </table>
+    <div id = "chart"></div>
+    <script type = "text/javascript" src="taxcal.js"></script>
+    <div id = "message"></div>
+    <div id = "blurb">
+      Created by <a href="http://www.kitware.com/company/team/baumes.html">Jeff Baumes</a>, <a href="http://www.kitware.com">Kitware, Inc.</a> Visualization using <a href="http://mbostock.github.com/d3/">d3</a>.
+      Colors by <a href="http://colorbrewer.org">Cynthia Brewer</a>.
+      Layout inspired by <a href="http://stat-computing.org/dataexpo/2009/posters/">Rick Wicklin and Robert Allison</a> via <a href="http://mbostock.github.com/d3/ex/calendar.html">Mike Bostock</a>.
+      Data provided by <a href="http://www.whatwepayfor.com">WhatWePayFor.com</a>.
+    </div>
+</body>
+</html>
